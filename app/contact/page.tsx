@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
-import { Phone, MapPin, Clock, MessageCircle, Instagram } from "lucide-react"
+import { Phone, MapPin, Clock, MessageCircle, Instagram, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const contactInfo = [
@@ -9,6 +9,18 @@ const contactInfo = [
     title: "Adres",
     content: "Abdurahman Gazi Mah. Sevenler Cad. Samyeli Sokak No: 9-11 A, Sancaktepe / İstanbul",
     href: "https://maps.app.goo.gl/Ug919d7D1cnritkT7",
+  },
+  {
+    icon: Mail,
+    title: "E-posta",
+    content: "gul@gulaksuguzelliksalonu.com.tr",
+    href: "mailto:gul@gulaksuguzelliksalonu.com.tr",
+  },
+  {
+    icon: Mail,
+    title: "E-posta",
+    content: "info@gulaksuguzelliksalonu.com",
+    href: "mailto:info@gulaksuguzelliksalonu.com",
   },
   {
     icon: Phone,
@@ -55,7 +67,7 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 {contactInfo.map((info) => (
-                  <div key={info.title} className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-card border border-border/50">
+                  <div key={info.href ?? info.title} className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-card border border-border/50">
                     <div className="p-3 rounded-full bg-primary/10 text-primary">
                       <info.icon className="h-6 w-6" />
                     </div>
